@@ -23,8 +23,8 @@
             "dest": "/static/$1"
         },
         {
-            "SIC": "/(.*)",
-            "dest": "a2svhackathon/wsgi.py"
+            "src": "/(.*)",
+            "dest": "JugaadBazar/wsgi.py"
         }
     ]
 }
