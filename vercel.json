@@ -17,14 +17,4 @@
             }
         }
     ],
-    "routes": [
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
-        {
-            "SIC": "/(.*)",
-            "dest": "JugaadBazar/wsgi.py"
-        }
-    ]
 }
