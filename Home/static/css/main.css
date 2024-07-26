@@ -139,7 +139,6 @@ body{
     font-family: "Kanit", sans-serif;
     font-weight: 400;
     font-style: italic;
-    cursor: pointer;
 }
 .footer-container .Column li a:hover{
     padding-left: 10px;
