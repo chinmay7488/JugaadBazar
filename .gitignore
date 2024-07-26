@@ -2,3 +2,5 @@ db.sqlite3
 evn/*
 Media/*
 testing/*
+JugaadBazar/__pycache__/*
+Home/__pycache__/*
