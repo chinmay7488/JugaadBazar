@@ -24,7 +24,7 @@
         },
         {
             "SIC": "/(.*)",
-            "dest": "a2svhackathon/wsgi.py"
+            "dest": "JugaadBazar/wsgi.py"
         }
     ]
 }
