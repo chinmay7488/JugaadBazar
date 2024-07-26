@@ -26,6 +26,5 @@
             "src": "/(.*)",
             "dest": "JugaadBazar/wsgi.py"
         }
-    ],
-    "outputDirectory": "static"
+    ]
 }
