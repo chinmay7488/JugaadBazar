@@ -1,0 +1,382 @@
+:root {
+    --dark-color:#6528F7;
+    --dark-light-color:#A076F9;
+    --medium-light-color:#D7BBF5;
+    --light-color:#EDE4FF;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+}
+.navbar{
+    background-color: var(--dark-color);
+    height: 10vh;
+}
+.div-1 ul{
+    list-style: none;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    justify-content: flex-end;
+}
+.div-1  li{
+    height: 60px;
+}
+.div-1  a{
+    height: 100%;
+    font-size: 18px;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--light-color);
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+.navbar .div-2 .username{
+    color: var(--light-color);
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.div-1  a:hover{
+    background-color: var(--dark-light-color);
+}
+.div-2 ul{
+    list-style: none;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+}
+.div-2 li{
+    height: 60px;
+}
+.div-2 a{
+    height: 100%;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 0 20px;
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    
+}
+.div-2 a:hover{
+    background-color: var(--dark-light-color);
+}
+.div-2{
+    float: right;
+}
+.div-1{
+    float: left;
+}
+/* ----------sidebar---------- */
+.div-1 .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(169, 170, 170, 0.452);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.div-1 .sidebar a{
+    color: var(--dark-color);
+}
+.div-1 .sidebar a:hover{
+    background-color: var(--medium-light-color);
+}
+.div-1 .sidebar li {
+    width: 100%;
+    height: 50px;
+}
+.div-1 .menu-button{
+    display: none;
+    height: 50px;
+}
+
+/* ---------Footer-------- */
+.footer-container .Column{
+    height: 12vh;
+    width: 25%;
+    padding: 10px 15px;
+}
+.footer-container .Column h3{
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--light-color);
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.footer-container .Column ul{
+    list-style: none;
+}
+.footer-container .Column li{
+    padding: 5px 0px;
+}
+.footer-container .Column li a{
+    text-decoration: none;
+    color: var(--light-color);
+    display: block;
+    font-size: 16px;
+    transition: all 0.3s ease ;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.footer-container .Column li a:hover{
+    padding-left: 10px;
+    font-size: 18px;
+}
+.footer-container .row{
+    display: flex;
+    flex-wrap: wrap;
+    height: 210px;
+}
+.footer-container{
+    background-color: var(--dark-color);
+}
+.main-container{
+    background-color: var(--dark-light-color);
+}
+
+/* --------------------HOME PAGE ---------------- */
+/* -------------------Product card ----------------- */
+.product-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.product-container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: var(--medium-light-color);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.product-container .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--light-color);
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.product-container .card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.product-container .card .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 80%;
+    height: 80%;
+    transition: .5s;
+}
+
+
+.product-container .card:hover .imgBx {
+    top: 0%;
+    transform: translateY(-25%);
+}
+
+.product-container .card .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    width: 190px;
+}
+
+.product-container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 90;
+}
+
+.product-container .card:hover .contentBx {
+    height: 210px;
+}
+
+.product-container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--dark-color);
+    text-transform: capitalize;
+}
+
+.product-container .card .contentBx .size,
+.product-container .card .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.product-container .card:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .5s;
+}
+
+.product-container .card:hover .contentBx .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .6s;
+}
+
+.product-container .card .contentBx .size h3,
+.product-container .card .contentBx .color h3 {
+    color: var(--dark-color);
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.product-container .card .contentBx .size .radio{
+    display: none;
+}
+.product-container .card .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #fff;
+    background: var(--dark-light-color);
+    cursor: pointer;
+}
+.product-container .card .contentBx .size .radio:checked + span{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.product-container .card .contentBx .color .radio{
+    display: none;
+}
+.product-container .card .contentBx .color span {
+    padding: 0 5px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #fff;
+    background: var(--dark-light-color);
+    cursor: pointer;
+}
+.product-container .card .contentBx .color .radio:checked + span{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.product-container .card .contentBx a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .5s;
+}
+
+.product-container .card:hover .contentBx a {
+    opacity: 1;
+    transform: translateY(0px);
+} 
+.product-container .card .contentBx .buybtn{
+    background-color: var(--dark-light-color);
+    color: #fff;
+}
+.product-container .card .contentBx .buybtn:hover{
+    background-color: var(--dark-color);
+}
+
+
+
+/* Logout and login form */
+.btn{
+    height: 40px;
+    width: 100%;
+    font-weight: 500;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    background: var(--dark-light-color);
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+.navbar .div-2 form{
+    opacity: 0;
+    visibility: hidden;
+}
+.navbar .div-2 .loginoutform{
+    display: flex;
+    position: absolute;
+    border: 3px solid var(--medium-light-color);
+    background-color: var(--dark-light-color);
+    height: 80px;
+    margin: 10px;
+    padding: 10px;
+   
+}
+.navbar .div-2 .loginoutform::before{
+    content: '';
+    position: absolute;
+    border: 1rem solid;
+    border-color:  transparent transparent var(--medium-light-color);
+    top: 0;
+    transform: translateX(80px) translateY(-32px);
+}
+.username:hover .form{
+    opacity: 1;
+    visibility: visible;
+    background-color: red;
+}

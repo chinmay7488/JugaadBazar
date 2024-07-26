@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="product-container">
+    {% for product in products %}
+    <div class="card">
+        <div class="imgBx">
+            <img src="/media/{{product.product_logo}}" alt="{{product.product_name}}">
+        </div>
+        <div class="contentBx">
+            <h2>{{product.product_name}}</h2>
+            <div class="size">
+                <h3>Months :</h3>
+                <label>
+                    <input class="radio" type="radio" id="3m" name="months" checked>
+                    <span class="radio-label">3</span>
+                </label>
+                <label>
+                    <input class="radio" type="radio" id="6m" name="months">
+                    <span class="radio-label">6</span>
+                </label>
+                <label>
+                    <input class="radio" type="radio" id="12m" name="months">
+                    <span class="radio-label">12</span>
+                </label>
+            </div>
+            <div class="color">
+
+                <h3>Account Type :</h3>
+                <label>
+                    <input class="radio" type="radio" id="3m" name="account" checked>
+                    <span class="radio-label">Video</span>
+                </label>
+                <label>
+                    <input class="radio" type="radio" id="6m" name="account">
+                    <span class="radio-label">Full</span>
+                </label>
+            </div>
+            <a href="#" class="buybtn">Add to cart</a>
+            <a href="#" class="buybtn">View more</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

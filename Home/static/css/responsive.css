@@ -1,0 +1,31 @@
+@media(max-width : 800px){
+    .onHideMobile{
+        display: none;
+    }
+    .div-1 .menu-button{
+        display: block;
+    }
+    .Column{
+        width: 40%;
+    }
+}
+@media(max-width : 400px){
+    .div-1 .sidebar{
+        width: 100%;
+    }
+    
+    .below400Hide{
+        display: none;
+    }
+    .below400Show{
+        display: flex;
+    }
+    .Column{
+        width: 100%;
+    }
+}
+@media(min-width:400px){
+    .below400Show{
+        display: none;
+    }
+}

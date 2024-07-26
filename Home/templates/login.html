@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="form-container">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="col col-2">
+            <div class="btn-box">
+                <button class="btn btn-1" id="login">Sign In</button>
+                <button class="btn btn-2" id="register">Sign Up</button>
+            </div>
+            <div class="login-form">
+                <div class="form-title">
+                    <span>Sign In</span>
+                </div>
+                <form class="form-inputs" method="post" action="/login/" role="form">
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <input type="text" name="phone_number" class="input-field" placeholder="Phone Number" required>
+                        <i class="bx bx-phone icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" class="input-field" placeholder="Password" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="">Forgot Password?</a>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-submit" type="submit">
+                            <span>Sign In</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="register-form">
+                <div class="form-title">
+                    <span>Sign Up</span>
+                </div>
+                <form class="form-inputs" method="post" action="/register/" role="form">
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <input type="text" name="full_name" class="input-field" placeholder="Full Name" required>
+                        <i class="bx bx-user-pin icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" class="input-field" placeholder="Email" required>
+                        <i class="bx bx-envelope icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="phone_number" class="input-field" placeholder="Phone Number"
+                            required>
+                        <i class="bx bx-phone icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" class="input-field" placeholder="Password" required>
+                        <i class="bx bx-lock-alt icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-submit" type="submit">
+                            <span>Sign Up</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const loginbtn = document.querySelector("#login");
+        const registerbtn = document.querySelector("#register");
+        const loginform = document.querySelector(".login-form");
+        const registerform = document.querySelector(".register-form");
+
+        loginbtn.addEventListener('click', () => {
+            loginbtn.style.backgroundColor = "#6528F7";
+            registerbtn.style.backgroundColor = "rgb(255,255,255,0.2)";
+
+            loginform.style.left = "50%";
+            registerform.style.left = "-50%";
+
+            loginform.style.opacity = 1;
+            registerform.style.opacity = 0;
+        })
+        registerbtn.addEventListener('click', () => {
+            loginbtn.style.backgroundColor = "rgb(255,255,255,0.2)";
+            registerbtn.style.backgroundColor = "#6528F7";
+
+            loginform.style.left = "150%";
+            registerform.style.left = "50%";
+
+            loginform.style.opacity = 0;
+            registerform.style.opacity = 1;
+        })
+
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
